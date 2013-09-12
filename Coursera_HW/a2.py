@@ -132,6 +132,50 @@ def insert_sequence(dna1, dna2, int):
             return 'Error - invalid index for interpolation to dna1'
     else:
         return 'Error - Please provide a valid DNA sequence' 
-            
+        
+        
+def get_complement(nucleotide):
+    '''(str) -> str
+
+    Returns the complement of the Nucleotide nucleotide. Only 'A','T',
+    'C', and 'G' are valid inputs.
+
+    >>>get_complement('A')
+    'T'
+    >>>get_complement('G')
+    'C'
+    '''
+    complement = ''
+
+    for char in nucleotide:
+        if is_valid_sequence(nucleotide):
+            if char is 'A':
+                complement = 'T'
+            elif char is 'T':
+                complement = 'A'
+            elif char is 'C':
+                complement = 'G'
+            elif char is 'G':
+                complement = 'C'
+
+    return complement
+
+def get_complementary_sequence(dna):
+    '''(str) -> str
+
+    Returns the complement DNA sequence to string dna. Only 'A','T',
+    'C', and 'G' are valid inputs.
+
+    >>>get_complementary_sequence('AT')
+    'TA'
+    >>>get_complementary_sequence('ATCGGT')
+    'TAGCCA'
+    '''
+    complement_sequence = ''
+
+    for char in dna:
+        complement_sequence = complement_sequence + get_complement(char)
+
+    return complement_sequence    
     
                 
