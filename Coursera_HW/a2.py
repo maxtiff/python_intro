@@ -15,7 +15,7 @@ def get_length(dna):
             else:
                 return 'Error'
     else:
-        return 'Error'
+        return len(dna)
 
 def is_longer(dna1, dna2):
     """ (str, str) -> bool
@@ -28,10 +28,13 @@ def is_longer(dna1, dna2):
     >>> is_longer('ATCG', 'ATCGGA')
     False
     """
-    if get_length(dna1) > get_length(dna2):
-        return True
-    else:
-        return False
+
+    if len(dna1) > 0 and len(dna2) > 0:
+        if get_length(dna1) > get_length(dna2):
+            return True
+        else:
+            return False
+    return 'Error'
 
 def count_nucleotides(dna, nucleotide):
     """ (str, str) -> int
@@ -45,14 +48,14 @@ def count_nucleotides(dna, nucleotide):
     """
     nuke_count = 0
 
-    if len(dna1) and len(dna2) > 0:
+    if len(dna) > 0 and len(nucleotide) > 0:
         for letter in dna:
             if letter in nucleotide:
                 nuke_count = nuke_count + 1
             
         return nuke_count
     else:
-        return 'Error'
+        return nuke_count
 
 def contains_sequence(dna1, dna2):
     """ (str, str) -> bool
@@ -122,7 +125,7 @@ def insert_sequence(dna1, dna2, int):
     sequence = ''
 
     if is_valid_sequence(dna1) and is_valid_sequence(dna2):
-        if int < len(dna1):
+        if not int > len(dna1):
             sequence = dna1[:int] + dna2 + dna1[int:]
             return sequence
         else:
