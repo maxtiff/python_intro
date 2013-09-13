@@ -16,7 +16,7 @@ def get_length(dna):
                 return 'Error'
     else:
         return len(dna)
-
+    
 def is_longer(dna1, dna2):
     """ (str, str) -> bool
 
@@ -29,12 +29,10 @@ def is_longer(dna1, dna2):
     False
     """
 
-    if len(dna1) > 0 and len(dna2) > 0:
-        if get_length(dna1) > get_length(dna2):
-            return True
-        else:
-            return False
-    return 'Error'
+    if get_length(dna1) > get_length(dna2):
+        return True
+    else:
+        return False
 
 def count_nucleotides(dna, nucleotide):
     """ (str, str) -> int
@@ -90,7 +88,7 @@ def is_valid_sequence(dna):
     >>> is_valid_sequence('aATC')
     False
     >>> is_valid_sequence('')
-    False
+    True
 
     '''
     valid = True
@@ -104,7 +102,7 @@ def is_valid_sequence(dna):
         return valid
             
     else:
-        return 'Enter a DNA sequence'
+        return valid
 
 def insert_sequence(dna1, dna2, int):
     ''' (str, str, int) -> str
@@ -117,7 +115,7 @@ def insert_sequence(dna1, dna2, int):
     'Error - Please provide a valid DNA sequence'
     >>> insert_sequence('AAGCT', 'TGA', 0)
     'TGAAAGCT'
-    >>> insert_sequence('AACCGT', 'TGCA', 6)
+    >>> insert_sequence('AACCGT', 'TGCA', 7)
     'Error - invalid index for interpolation to dna1'
 
     '''
@@ -148,15 +146,16 @@ def get_complement(nucleotide):
     complement = ''
 
     for char in nucleotide:
-        if is_valid_sequence(nucleotide):
-            if char is 'A':
-                complement = 'T'
-            elif char is 'T':
-                complement = 'A'
-            elif char is 'C':
-                complement = 'G'
-            elif char is 'G':
-                complement = 'C'
+        if char is 'A':
+            complement = 'T'
+        elif char is 'T':
+            complement = 'A'
+        elif char is 'C':
+            complement = 'G'
+        elif char is 'G':
+            complement = 'C'
+        elif char is '' :
+            complement
 
     return complement
 
@@ -176,6 +175,6 @@ def get_complementary_sequence(dna):
     for char in dna:
         complement_sequence = complement_sequence + get_complement(char)
 
-    return complement_sequence    
+    return complement_sequence
     
                 
