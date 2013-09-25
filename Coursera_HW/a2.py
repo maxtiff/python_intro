@@ -146,15 +146,16 @@ def get_complement(nucleotide):
     complement = ''
 
     for char in nucleotide:
-        if char is 'A':
-            complement = 'T'
-        elif char is 'T':
-            complement = 'A'
-        elif char is 'C':
-            complement = 'G'
-        elif char is 'G':
-            complement = 'C'
-        elif char is '' :
+        if char in 'ATCG':
+            if char == 'A':
+                complement = 'T'
+            elif char == 'T':
+                complement = 'A'
+            elif char == 'C':
+                complement = 'G'
+            elif char == 'G':
+                complement = 'C'
+        if char == '' :
             complement
 
     return complement
