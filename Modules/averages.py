@@ -19,6 +19,6 @@ def averages(grades):
 		for mark in grades_list:
 			total = total + mark
 
-		aveerages.append(total /  len(grades_list))
+		averages.append(total /  len(grades_list))
 
 	return averages
