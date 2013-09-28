@@ -1,18 +1,19 @@
-"""A board is a list of list of str. For example, the board
-    ANTT
-    XSOB
-is represented as the list
-    [['A', 'N', 'T', 'T'], ['X', 'S', 'O', 'B']]
+def create_board(board, word_lst):
+    """A board is a list of list of str. For example, the board
+        ANTT
+        XSOB
+    is represented as the list
+        [['A', 'N', 'T', 'T'], ['X', 'S', 'O', 'B']]
 
-A word list is a list of str. For example, the list of words
-    ANT
-    BOX
-    SOB
-    TO
-is represented as the list
-    ['ANT', 'BOX', 'SOB', 'TO']
-"""
-
+    A word list is a list of str. For example, the list of words
+        ANT
+        BOX
+        SOB
+        TO
+    is represented as the list
+        ['ANT', 'BOX', 'SOB', 'TO']
+    """
+    
 
 def is_valid_word(wordlist, word):
     """ (list of str, str) -> bool
