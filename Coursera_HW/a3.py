@@ -66,6 +66,7 @@ def make_str_from_column(board, column_index):
 
     return column_str
     
+    
 
 def board_contains_word_in_row(board, word):
     """ (list of list of str, str) -> bool
