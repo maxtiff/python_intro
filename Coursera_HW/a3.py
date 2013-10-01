@@ -22,7 +22,12 @@ def is_valid_word(wordlist, word):
     >>> is_valid_word(['ANT', 'BOX', 'SOB', 'TO'], 'TO')
     True
     """
-
+    valid = False
+    
+    if word in wordlist:
+        valid = True
+        
+    return valid
 
 def make_str_from_row(board, row_index):
     """ (list of list of str, int) -> str
@@ -33,7 +38,13 @@ def make_str_from_row(board, row_index):
     >>> make_str_from_row([['A', 'N', 'T', 'T'], ['X', 'S', 'O', 'B']], 0)
     'ANTT'
     """
-
+    row_word = ''
+    
+    for letter in board[row_index]:
+      row_word = letter + row_word
+    
+    return row_word
+      
 
 def make_str_from_column(board, column_index):
     """ (list of list of str, int) -> str
