@@ -1,4 +1,3 @@
-def create_board(board, word_lst):
     """A board is a list of list of str. For example, the board
         ANTT
         XSOB
