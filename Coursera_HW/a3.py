@@ -197,8 +197,8 @@ def read_board(board_file):
     one row of the board per line. Newlines are not included in the board.
     """
 
-    board = []
+    lst_board = []
 
     for char in board_file:
-        board.append(char)
+        board.append(char.rstrip('\n'))
         
