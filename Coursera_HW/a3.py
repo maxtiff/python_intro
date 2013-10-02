@@ -101,10 +101,11 @@ def board_contains_word_in_column(board, word):
     False
     """
     
-    for column_index in range(len(board)):
-        if word in make_str_from_row(board, column_index):
+    
+    for column_index in range(len(board[0])):
+        if word in make_str_from_column(board, column_index):
             return True
-
+        
     return False
 
 
@@ -118,6 +119,10 @@ def board_contains_word(board, word):
     >>> board_contains_word([['A', 'N', 'T', 'T'], ['X', 'S', 'O', 'B']], 'ANT')
     True
     """
+
+    if board_contains_word_in_column(board,word) or board_contains_word_in_row(board, word):
+        return True
+    return False
 
 
 def word_score(word):
@@ -133,6 +138,15 @@ def word_score(word):
     >>> word_score('DRUDGERY')
     16
     """
+
+    if len(word) < 3:
+        return 0
+    elif len(word) < 7:
+        return 1 * len(word)
+    elif len(word) < 10:
+        return 2 * len(word)
+    else:
+        return 3 * len(word)
 
 
 def update_score(player_info, word):
