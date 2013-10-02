@@ -183,6 +183,12 @@ def read_words(words_file):
     from the standard English alphabet.
     """
 
+    lst_words = []
+
+    for line in words_file:
+        lst_words.append(line.rstrip('\n'))
+
+    return lst_words
 
 def read_board(board_file):
     """ (file open for reading) -> list of list of str
@@ -190,3 +196,9 @@ def read_board(board_file):
     Return a board read from open file board_file. The board file will contain
     one row of the board per line. Newlines are not included in the board.
     """
+
+    board = []
+
+    for char in board_file:
+        board.append(char)
+        
