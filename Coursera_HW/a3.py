@@ -17,17 +17,16 @@ is represented as the list
 def is_valid_word(wordlist, word):
     """ (list of str, str) -> bool
 
-Return True if and only if word is an element of wordlist.
+    Return True if and only if word is an element of wordlist.
 
->>> is_valid_word(['ANT', 'BOX', 'SOB', 'TO'], 'TO')
-True
-"""
-    valid = False
-    
+    >>> is_valid_word(['ANT', 'BOX', 'SOB', 'TO'], 'TO')
+    True
+    """
+
     if word in wordlist:
-        valid = True
+        return True
         
-    return valid
+    return False
 
 def make_str_from_row(board, row_index):
     """ (list of list of str, int) -> str
@@ -58,11 +57,9 @@ def make_str_from_column(board, column_index):
     """
 
     column_str = ''
-    i = 0
-    
-    for lst in board:
+
+    for i in range(len(board)):
         column_str = column_str + board[i][column_index]
-        i = i + 1
 
     return column_str
     
@@ -158,6 +155,7 @@ def update_score(player_info, word):
     >>> update_score(['Jonathan', 4], 'ANT')
     """
 
+    player_info [1] = player_info[1] + word_score(word)
 
 def num_words_on_board(board, words):
     """ (list of list of str, list of str) -> int
@@ -167,7 +165,13 @@ def num_words_on_board(board, words):
     >>> num_words_on_board([['A', 'N', 'T', 'T'], ['X', 'S', 'O', 'B']], ['ANT', 'BOX', 'SOB', 'TO'])
     3
     """
+    word_count = 0
 
+    for word in words:
+        if board_contains_word(board, word):
+            word_count = word_count + 1
+            
+    return word_count
 
 def read_words(words_file):
     """ (file open for reading) -> list of str
