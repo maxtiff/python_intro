@@ -196,9 +196,14 @@ def read_board(board_file):
     Return a board read from open file board_file. The board file will contain
     one row of the board per line. Newlines are not included in the board.
     """
-
-    lst_board = []
-
-    for char in board_file:
-        board.append(char.rstrip('\n'))
+    
+    list_of_rows = []
+    
+    for line in board_file:
+        row = []
+        line = line.rstrip('\n')
+        for ch in line:
+            row.append(ch.rstrip('\n'))
+        list_of_rows.append(row)
         
+    return list_of_rows
