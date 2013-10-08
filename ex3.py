@@ -1,21 +1,32 @@
 from sys import argv
 
-script, user_name = argv
-prompt = '> '
+script, filename = argv
 
-print ("Hi {0}, I'm the {1} script.".format(user_name, script))
-print ("I'd like to ask you a few questions.")
-print ("Do you like me {0}?".format(user_name))
-likes = input(prompt)
+print ("We're going to erase {0}".format(filename))
+print ("If that's not cool, hit CTRL-C (^C).")
+print ("Otherwise, just hit enter.")
 
-print ("Where do you live {0}".format(user_name))
-lives = input(prompt)
+input("What you gonna do?")
 
-print ("What kind of computer do you have?")
-computer = input(prompt)
+print ("Opening the file ...")
+target = open(filename, 'w')
 
-print ("""
-Alright, so you said {0} about liking me.
-You live in {1}. Not sure where that is.
-And you have a {2} computer. Nice.
-""".format(likes, lives, computer))
+print ("Truncating the file. Goodbye!")
+target.truncate()
+
+print ("Now I'm going to ask you for three lines.")
+
+line1 = input("Line 1: ")
+line2 = input("Line 2: ")
+line3 = input("Line 3: ")
+
+lines = [line1, line2, line3]
+
+print ("Now I will write these shits to the file.")
+
+for i in range(0,3):
+	target.write(lines[i])
+	target.write("\n")
+
+print ("And then close it.")
+target.close()
