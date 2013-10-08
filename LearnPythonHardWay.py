@@ -1,32 +1,23 @@
 from sys import argv
+from os.path import exists
 
-script, filename = argv
+script, from_file, to_file = argv
 
-print ("We're going to erase {0}".format(filename))
-print ("If that's not cool, hit CTRL-C (^C).")
-print ("Otherwise, just hit enter.")
+print ("Copy from {0} to {1}".format(from_file, to_file))
 
-input("What you gonna do?")
+in_file = open(from_file)
+indata = in_file.read()
 
-print ("Opening the file ...")
-target = open(filename, 'w')
+print ("the input file is {0} bytes long".format(len(indata)))
 
-print ("Truncating the file. Goodbye!")
-target.truncate()
+print ("Does the output file exist? {0}".format(exists(to_file)))
+print ("Read, hit RETURN to continue, CTRL-C to abort.")
+input()
 
-print ("Now I'm going to ask you for three lines.")
+out_file = open(to_file, 'w')
+out_file.write(indata)
 
-line1 = input("Line 1: ")
-line2 = input("Line 2: ")
-line3 = input("Line 3: ")
+print ("Finished")
 
-lines = [line1, line2, line3]
-
-print ("Now I will write these shits to the file.")
-
-for i in range(0,3):
-	target.write(lines[i])
-	target.write("\n")
-
-print ("And then close it.")
-target.close()
+out_file.close()
+in_file.close()
