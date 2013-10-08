@@ -1,20 +1,21 @@
-x = "There are {0} types of people".format(10)
-binary = "binary"
-do_not = "don't"
-y = "Those who know {0} and those who {1}".format(binary, do_not)
+from sys import argv
 
-print(x)
-print(y)
+script, user_name = argv
+prompt = '> '
 
-print("I said: {0}.".format(x))
-print("I also said: {0}".format(y))
+print ("Hi {0}, I'm the {1} script.".format(user_name, script))
+print ("I'd like to ask you a few questions.")
+print ("Do you like me {0}?".format(user_name))
+likes = input(prompt)
 
-hilarious = False
-joke_eval = "Isn't that joke so funny?! {0}"
+print ("Where do you live {0}".format(user_name))
+lives = input(prompt)
 
-print(joke_eval.format(hilarious))
+print ("What kind of computer do you have?")
+computer = input(prompt)
 
-w = "This is the left side of..."
-e = "a string with a right side."
-
-print(w + e)
+print ("""
+Alright, so you said {0} about liking me.
+You live in {1}. Not sure where that is.
+And you have a {2} computer. Nice.
+""".format(likes, lives, computer))
