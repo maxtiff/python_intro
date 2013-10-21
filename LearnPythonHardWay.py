@@ -1,24 +1,35 @@
-def add(a, b):
-	print ("Adding {0} + {1}".format(a, b))
-	return a + b
+print ("Let's practice everything.")
+print ('You\'d need to know \'bout escapes with \\ that do \n newlines and \t tabs.')
 
-def subtract(a,b):
-	print ("Subtracting {0} - {1}".format(a, b))
-	return a - b
+poem = """
+\t the lovely world
+with logic so firmly planted
+cannot discern \n the needs of love
+nor comprehend passion from inution
+and requires an explanation
+\n\t\twhere there is none.
+"""
 
-def multiply(a,b):
-	print ("Multiplying {0} * {1}".format(a, b))
-	return a * b
+print ("------------")
+print (poem)
+print ("------------")
 
-def divide(a,b):
-	print ("Dividing {0} / {1}".format(a, b))
-	return a / b
+five = 10 - 2 + 3 -6
+print("This should be five: {0}".format(five))
 
-print ("Let's do some math with just functions!")
+def secret_formula(started):
+	jelly_beans = started * 500
+	jars = jelly_beans // 1000
+	crates = jars // 100
+	return jelly_beans, jars, crates
 
-age = add(20,7)
-height = subtract(74,2)
-weight = multiply(55,3)
-iq = divide(100,2)
+start_point = 10000
+beans, jars, crates = secret_formula(start_point)
 
-print ("Age: {0}, Height: {1}, Weight: {2}, IQ: {3}".format(age, height, weight, iq))
+print ("With a starting point of: {0}".format(start_point))
+print ("We'd have {0} beans, {1} jars, and {2} crates.".format(beans, jars, crates))
+
+start_point = start_point // 10
+
+print("We can also that this way:")
+print("We'd have {0} beans, {1} jars, and {2} crates".format(secret_formula(start_point)))
