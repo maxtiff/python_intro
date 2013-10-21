@@ -1,33 +1,24 @@
-from sys import argv
+def add(a, b):
+	print ("Adding {0} + {1}".format(a, b))
+	return a + b
 
-script, input_file = argv
+def subtract(a,b):
+	print ("Subtracting {0} - {1}".format(a, b))
+	return a - b
 
-def print_all(f):
-	print (f.read())
+def multiply(a,b):
+	print ("Multiplying {0} * {1}".format(a, b))
+	return a * b
 
-def rewind(f):
-	f.seek(0)
+def divide(a,b):
+	print ("Dividing {0} / {1}".format(a, b))
+	return a / b
 
-def print_a_line(line_count, f):
-	print (line_count, f.readline())
+print ("Let's do some math with just functions!")
 
-current_file = open(input_file)
+age = add(20,7)
+height = subtract(74,2)
+weight = multiply(55,3)
+iq = divide(100,2)
 
-print ("First let's print the whole file: \n")
-
-print_all(current_file)
-
-print ("Now let's rewind, kindof like a tape.")
-
-rewind(current_file)
-
-print ("Let's print three lines.")
-
-current_line = 1
-print_a_line(current_line, current_file)
-
-current_line += 1
-print_a_line(current_line, current_file)
-
-current_line += 1
-print_a_line(current_line, current_file)
+print ("Age: {0}, Height: {1}, Weight: {2}, IQ: {3}".format(age, height, weight, iq))
