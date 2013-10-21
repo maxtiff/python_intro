@@ -1,23 +1,18 @@
-from sys import argv
-from os.path import exists
+def print_two(*args):
+	arg1, arg2 = args
+	print ("arg1: {0}, arg2: {1}".format(arg1, arg2))
 
-script, from_file, to_file = argv
 
-print ("Copy from {0} to {1}".format(from_file, to_file))
+def print_two_better(arg1, arg2):
+	print ("arg1: {0}, arg2: {1}".format(arg1, arg2))
 
-in_file = open(from_file)
-indata = in_file.read()
+def print_one(arg1):
+	print ("arg1: {0}".format(arg1))
 
-print ("the input file is {0} bytes long".format(len(indata)))
+def print_none():
+	print ("I got nothin'.")
 
-print ("Does the output file exist? {0}".format(exists(to_file)))
-print ("Read, hit RETURN to continue, CTRL-C to abort.")
-input()
-
-out_file = open(to_file, 'w')
-out_file.write(indata)
-
-print ("Finished")
-
-out_file.close()
-in_file.close()
+print_two('Travis', 'May')
+print_two_better('Travis', 'May')
+print_one('First!')
+print_none()
