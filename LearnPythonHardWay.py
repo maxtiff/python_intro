@@ -1,35 +1,30 @@
-print ("Let's practice everything.")
-print ('You\'d need to know \'bout escapes with \\ that do \n newlines and \t tabs.')
+def break_words(stuff):
+	"""This function will break up words for us."""
+	words = stuff.split(' ')
+	return words
 
-poem = """
-\t the lovely world
-with logic so firmly planted
-cannot discern \n the needs of love
-nor comprehend passion from inution
-and requires an explanation
-\n\t\twhere there is none.
-"""
+def sort_words(words):
+	"""This function will sort words for us."""
+	return sorted(words)
 
-print ("------------")
-print (poem)
-print ("------------")
+def print_first_word(words):
+	word = words.pop(0)
+	print (word)
 
-five = 10 - 2 + 3 -6
-print("This should be five: {0}".format(five))
+def print_last_word(words):
+	word = words.pop(-1)
+	print (word)
 
-def secret_formula(started):
-	jelly_beans = started * 500
-	jars = jelly_beans // 1000
-	crates = jars // 100
-	return jelly_beans, jars, crates
+def sort_sentence(sentence):
+	words = break_words(sentence)
+	return sort_words(words)
 
-start_point = 10000
-beans, jars, crates = secret_formula(start_point)
+def print_first_and_last(sentence):
+	words = break_words(sentence)
+	print_first_word(words)
+	print_last_word(words)
 
-print ("With a starting point of: {0}".format(start_point))
-print ("We'd have {0} beans, {1} jars, and {2} crates.".format(beans, jars, crates))
-
-start_point = start_point // 10
-
-print("We can also that this way:")
-print("We'd have {0} beans, {1} jars, and {2} crates".format(secret_formula(start_point)))
+def print_first_and_last_sorted(sentence):
+	words = sort_sentence(sentence)
+	print_first_word(words)
+	print_last_word(words)
