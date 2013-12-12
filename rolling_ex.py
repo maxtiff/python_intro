@@ -1,60 +1,36 @@
-# create a mapping of state to abbreviation
-states = {
-	'Oregon': 'OR',
-	'Florida': 'FL',
-	'California': 'CA',
-	'New York': 'NY',
-	'Michigan': 'MI'
-}
+class Song(object):
 
-# create a basic set of states and some cities in them
-cities = {
-	'CA': 'San Francisco',
-	'MI': 'Detroit',
-	'FL': 'Jacksonville'
-}
+	def __init__(self,lyrics):
+		self.lyrics = lyrics
 
-# add more cities to 'cities'
-cities['NY'] = 'New York'
-cities['OR'] = 'Portland'
+	def sing_me_a_song(self):
+		for line in self.lyrics:
+			print(line)
 
-# print out some cities
-print('-' * 10)
-print('NY State has: ', cities['NY'])
-print('OR State has: ', cities['OR'])
+happy_bday = Song(["Happy birthday to you",
+				   "I don't want to get sued",
+				   "So I'll stop right there."])
 
-# print out some states
-print ('-' * 10)
-print ('Michigan\'s abbreviation is: ', states['Michigan'])
-print ('Florida\'s abbreviation is: ', states['Florida'])
+bulls_on_parade = Song(["They rally around the family",
+						"With pockets full of shells"])
 
-# do it by using the state then cities dict
-print('-' * 10)
-print('Michigan has: ', cities[states['Michigan']])
-print('Florida has: ', cities[states['Florida']])
+white_riot = Song(["Black man gotta lot a problems",
+				   "But they don't mind throwin a brick",
+				   "White people go to school",
+				   "Where they teach you how ta be thick"])
 
-# print every state abbreviation
-print('-' * 10)
-for state, abbrev in states.items():
-	print('{0} is abbreviated {1}'.format(state,abbrev))
+lyrics = Song(["Black man gotta lot a problems",
+				"But they don't mind throwin a brick",
+				"White people go to school",
+				"Where they teach you how ta be thick"])
 
-# print every city in state
-print('-' * 10)
-for abbrev, city in cities.items():
-	print ('{0} has the city {1}'.format(abbrev, city))
+wight_riot = lyrics
 
-# now print both at the same time
-print('-' * 10)
-for state, abbrev in states.items():
-	print ('{0} state is abbreviated {1} and has the city {2}'.format(state,abbrev,cities[abbrev]))
+happy_bday.sing_me_a_song()
 
-print('-' * 10)
-# safely get ab abbreviation by state that might not be there
-state = states.get('Texas', None)
+bulls_on_parade.sing_me_a_song()
 
-if not state:
-	print ('Sorry, no Texas.')
+white_riot.sing_me_a_song()
 
-# get a city with a default value
-city = cities.get('TX', 'Does Not Exist')
-print ('The city for the states \'TX\' is: {0}'.format(city))
+wight_riot.sing_me_a_song()
+
