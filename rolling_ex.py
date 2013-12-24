@@ -20,9 +20,9 @@ white_riot = Song(["Black man gotta lot a problems",
 				   "Where they teach you how ta be thick"])
 
 lyrics = Song(["Black man gotta lot a problems",
-				"But they don't mind throwin a brick",
-				"White people go to school",
-				"Where they teach you how ta be thick"])
+			   "But they don't mind throwin a brick",
+			   "White people go to school",
+			   "Where they teach you how ta be thick"])
 
 wight_riot = lyrics
 
