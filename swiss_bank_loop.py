@@ -1,6 +1,5 @@
 import csv
 from sys import argv
-from collections import defaultdict
 
 script, input_file = argv
 
@@ -23,4 +22,4 @@ for row in csv_reader:
 
 	current_row += 1	
 			
-csv_file.close()
+csv_file.close() 
