@@ -1,0 +1,35 @@
+**********MONETARY BASE************
+Swiss national bank
+Monthly Statistical Bulletin January 2014
+Monetary base and liquidity
+B1 Monetary base
+Origination (monthly)
+
+"Note: In order to fully understand the values in this file, it is"
+necessary to consult the corresponding publication document.
+The available file does not contain any information about
+"indices, footnotes etc.."
+A link to the appropriate PDF file can be found on the same web page
+as the link to this file.
+"For copyright reasons, the downloading of data series is restricted."
+"In blocked time series, ""x"" is shown instead of the data."
+
+**********TOTAL BALANCE SHEET ITEMS**********
+Balance sheet items, balance sheet total
+Balance sheet total1
+In CHF millions
+
+"1  Until 1974, fiduciary business could be recorded on the balance sheet; thereafter, it had to be entered as an off-balance-sheet item."
+"   As of 1981, precious metal accounts are included in the balance sheet."
+"   As of 1992, including non-monetary balance sheet claims and liabilities from lending. "
+"   As of 1995, transactions in financial derivatives must be recorded in gross terms, resulting in a significant increase in total assets."
+"   As of 1998, including non-monetary balance sheet claims and liabilities from repo transactions. "
+"   As of 2000, the majority of banks have again taken non-monetary claims and liabilities from lending and repo transactions off the"
+   balance sheet.
+"2  In 1913, certain data which the individual banks had reported in previous years was aggregated ? due to the creation of new "
+"   bank categories. Subsequently, this data was recorded in the aggregated form. Consequently, figures are available for big "
+   banks as far back as 1906. Cf. table A1 in the commentary section.
+"   As of 2003, one big bank uses netting, resulting in a marked decrease in its total assets."
+"   In 2004, two big banks switched to US GAAP, resulting in an appreciable increase in their total assets."
+"3  For the Raiffeisen banks, data prior to 1919 was reported retrospectively."
+"4  Until 1971, data for Branches of foreign banks and those for Private bankers are derived from another data collection."
