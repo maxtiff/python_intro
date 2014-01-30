@@ -1,3 +1,12 @@
+
+"""
+@author h1tjm03
+SNB_csv_reader.py
+
+This program imports a horizontally oriented csv file and creates data files from each column.
+Currently it is specialized to work with data sets from SNB.
+"""
+
 import csv
 from sys import argv
 
@@ -43,4 +52,4 @@ while series_col_num < ncol:
 	series_col_num += 1
 
 #	Close the CSV file	
-csv_file.close()
+csv_file.close() 
