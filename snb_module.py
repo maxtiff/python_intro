@@ -2,7 +2,7 @@ import csv
 
 def series_id_map(list1, list2):
 
-	'''(list1, list2)->(dictionary)
+	'''(list1, list2)->dict
 
 	This function maps the values of a list to the values of another list and stores them in a dictionary
 	that the function then returns.
@@ -35,8 +35,10 @@ def create_data_files(series_file):
 
 	#	Count the number of columns in the CSV file and then return to the beginning of the file.
 	ncol = len(next(csv_reader))
-	print(ncol)
+	series_count = ncol - 1
 	csv_file.seek(0)
+	print('There are ' + str(series_count) + ' series.' + "\n")
+	
 
 
 	#	Loop through each series id to print observations to the file.
@@ -56,13 +58,27 @@ def create_data_files(series_file):
 			current_row += 1
 
 		#	Close the series file
-		f.close()
+		f.close()		
 		
-		
-		# 	Return to the beginning of the CSV file in order to create headers for all series data files.
+		# 	Return to the beginning of the CSV file in order to create all series data files.
 		csv_file.seek(0)
+
 		#	Move to next column that contains data
 		series_col_num += 1
 
 	#	Close the CSV file	
 	csv_file.close()
+
+# def count_series(time_series_csv):
+
+# 	'''(csv file)->int
+
+# 	Counts the columns in the csv file to determine the amount of series that should be processed. Function returns an integer that represents
+# 	the amount of series.
+
+# 	'''
+# 	ncol = len(next(time_series_csv))
+# 	csv_file.seek(0)
+# 	return ncol
+
+
