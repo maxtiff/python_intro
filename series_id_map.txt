@@ -1,0 +1,5 @@
+monthly_monetary_base:
+[snbforcurpos,snbsecrport,snbmmt,snbrembalpos,snbmontbase] = [Relevant foreign currency positions,Securities portfolio,Money market transactions,Other,Monetary base]
+
+total_balance_sheet_items:
+[chtotbalshcant,chtotbalshbigbnks,chtotbalshrgnbnks,chtotbalraiffeisen,chtotbalshothbnks,chtotbalshbnks,chtotbalshforbrnch,chtotbalshprivate,chtotbalshallbnks] = [Cantonal Banks,Big banks2,Regional banks and savings banks,Raiffeisen banks3,Other Banks,Total,Branches of foreign banks4,Private Bankers4,All banks]
