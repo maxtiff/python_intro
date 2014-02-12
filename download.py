@@ -5,31 +5,14 @@ Download.py
 
 """
 #	Import functions from EIA module
-from eia import *
+import eia
+#	Import settings file
+import settings
 
-#	import settings file
-from settings import * 
+manifest = eia.download_file(settings.url,settings.manifest,settings.PROXIES, settings.HEADERS)
+eia.save_manifest(manifest, settings.manifest)
 
-#	Set base download request URL
-link = 'http://api.eia.gov/bulk/'
+data = eia.download_file(settings.url,settings.zip_archive,settings.PROXIES,settings.HEADERS)
+eia.save_json(settings.raw_data, settings.json_obj, data)
 
-#	Set manifest url
-manifest = 'manifest.txt'
-
-#	Set base name for downloads
-filename = 'NG'
-
-#	Set extensions to archive's web location, raw data local download location, and json local save location.
-extensions = { 'zip' : '.zip', }
-
-z_ext = '.zip'
-d_ext = '.txt'
-j_ext = '.json'
-zip_archive = filename + z_ext
-raw_data = filename + d_ext
-json_obj = filename + j_ext
-
-
-data = download_file(link,zip_archive,PROXIES,HEADERS)
-save_file(raw_data, json_obj, data)
-decode_json(json_obj)
+eia.decode_json(settings.json_obj)
