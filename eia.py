@@ -5,7 +5,7 @@ import io
 
 #	import urllib error handling
 from urllib.error import HTTPError,URLError
-from settings import F_MODE
+
 
 
 def download_file(base_url, file_url, proxy, header):
@@ -35,12 +35,20 @@ def download_file(base_url, file_url, proxy, header):
 	#	Return response in order for save_file function to process archive
 	return response
 
+def save_manifest(manifest, path):
+	'''(HTTPResponse, str)->text file
+
+	Write the HTTP response from download_file() function to a json file of the bulk manifest.
+	'''
+	f = open(path,'wb+')
+	f.write(manifest.read())
+	f.close()
 
 
-def save_file(data,json_path,response):
-	'''(str, str, HTTPResponse)->json_object
+def save_json(data,path,response):
+	'''(str, str, HTTPResponse)->json file
 
-	Write the HTTP response to a file for data processing and return the path of that file.
+	Write the HTTP response from download_file() function to a file for data processing and then return the path of that file.
 	
 	Example:
 	>>>save_file('NG.txt','NG.json','http://api.eia.gov/bulk/NG.zip')
@@ -48,25 +56,29 @@ def save_file(data,json_path,response):
 	'''
 
 	#	Create the json object file in order to write the data.
-	f = open(json_path,'wb+')
+	f = open(path,'wb+')
 
-	#	Read the item in the downloaded archive
+	#	Read the item in the downloaded zip archive
 	z = ZipFile(io.BytesIO(response.read()))
 
-	#	Write the contents of the item in the archive to a json object.
+	#	Write the contents of the item in the zip archive to the json object.
 	for line in z.open(data).readlines():
 		f.write(line)
 	
 	#	Close the json object file.
 	f.close()
 
-	return json_path
+	return path
 
 
-def decode_json(object):
-	'''(json_object)->array
+def decode_json(f):
+	'''(json_object)->files
 
-	Convert the downloaded json object to an array of strings.
+	Decode the json object into individual time series data files.
+
+	Example:
+	>>>decode_json(NG.json)
+
 	'''
-
-
+	json_data = open(f)
+	json.dump(json_data)
